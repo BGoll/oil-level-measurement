@@ -22,15 +22,15 @@ int readDistance()
     digitalWrite(TRIGGER_PIN, LOW);
     delayMicroseconds(3);
     noInterrupts();
-    digitalWrite(TRIGGER_PIN, HIGH); //Trigger Impuls 10 us
+    digitalWrite(TRIGGER_PIN, HIGH); // trigger impuls 10 us
     delayMicroseconds(10);
     digitalWrite(TRIGGER_PIN, LOW);
-    travelTime = pulseIn(ECHO_PIN, HIGH); // Echo-Zeit messen
+    travelTime = pulseIn(ECHO_PIN, HIGH); // measure echo time
     Serial.print("travelTime: ");
     Serial.println(travelTime);
     interrupts();
-    travelTime = (travelTime / 2); // Zeit halbieren
-    distance = travelTime / 29.1; // Zeit in Zentimeter umrechnen
+    travelTime = (travelTime / 2); // dividing the travelTime by two, since it contains the time to the object and back again
+    distance = travelTime / 29.1; // convert time to centimeters
     Serial.print("Distance: ");
     Serial.println(distance);
     return(distance);

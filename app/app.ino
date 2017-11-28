@@ -120,23 +120,3 @@ void loop()
     IoTHubClient_LL_DoWork(iotHubClientHandle);
     delay(10);
 }
-
-/*int getEntfernung()
-{
-  long entfernung=0;
-  long zeit=0;
-
-  digitalWrite(triggerPin, LOW);
-  delayMicroseconds(3);
-  noInterrupts();
-  digitalWrite(triggerPin, HIGH); //Trigger Impuls 10 us
-  delayMicroseconds(10);
-  digitalWrite(triggerPin, LOW);
-  zeit = pulseIn(echoPin, HIGH); // Echo-Zeit messen
-  //Serial.println(zeit);
-
-  interrupts();
-  zeit = (zeit/2); // Zeit halbieren
-  entfernung = zeit / 29.1; // Zeit in Zentimeter umrechnen
-  return(entfernung);
-}*/
